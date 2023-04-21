@@ -10,11 +10,9 @@ import org.junit.After;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.LoginPage;
 import pages.RegisterPage;
 
-import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -41,13 +39,10 @@ public class RegisterTest {
         driver.get(Constants.REGISTER_PAGE);
         driver.manage().window().maximize();
 
-        new WebDriverWait(driver, Duration.ofSeconds(5));
         objRegisterPage.inputName(this.name);
         objRegisterPage.inputEmail(this.email);
         objRegisterPage.inputPassword(this.password);
         objRegisterPage.clickRegister();
-
-        new WebDriverWait(driver, Duration.ofSeconds(3));
 
         LoginPage objLoginPage = new LoginPage(driver);
         objLoginPage.validateOpeningLoginPage();
@@ -81,7 +76,6 @@ public class RegisterTest {
         driver.get(Constants.REGISTER_PAGE);
         driver.manage().window().maximize();
 
-        new WebDriverWait(driver, Duration.ofSeconds(5));
         objRegisterPage.inputName(this.name);
         objRegisterPage.inputEmail(this.email);
         objRegisterPage.inputPassword(this.password);

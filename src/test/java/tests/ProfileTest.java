@@ -11,10 +11,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.*;
 
-import java.time.Duration;
 import java.util.Map;
 
 public class ProfileTest {
@@ -48,18 +46,13 @@ public class ProfileTest {
         driver.get(Constants.LOGIN_PAGE);
         driver.manage().window().maximize();
 
-        new WebDriverWait(driver, Duration.ofSeconds(3));
         objLoginPage.inputEmail(this.email);
         objLoginPage.inputPassword(this.password);
         objLoginPage.clickEnter();
 
-        new WebDriverWait(driver, Duration.ofSeconds(5));
         objHeader.openProfile();
-
-        new WebDriverWait(driver, Duration.ofSeconds(10));
         objUserProfile.validateOpeningProfile();
 
-        new WebDriverWait(driver, Duration.ofSeconds(3));
         objHeader.clickConstructor();
         objHomePage.validateOpeningHomePage();
     }
@@ -76,18 +69,13 @@ public class ProfileTest {
         driver.get(Constants.LOGIN_PAGE);
         driver.manage().window().maximize();
 
-        new WebDriverWait(driver, Duration.ofSeconds(3));
         objLoginPage.inputEmail(this.email);
         objLoginPage.inputPassword(this.password);
         objLoginPage.clickEnter();
 
-        new WebDriverWait(driver, Duration.ofSeconds(5));
         objHeader.openProfile();
-
-        new WebDriverWait(driver, Duration.ofSeconds(10));
         objUserProfile.validateOpeningProfile();
 
-        new WebDriverWait(driver, Duration.ofSeconds(3));
         objHeader.clickLogo();
         objHomePage.validateOpeningHomePage();
     }
@@ -103,19 +91,15 @@ public class ProfileTest {
         driver.get(Constants.LOGIN_PAGE);
         driver.manage().window().maximize();
 
-        new WebDriverWait(driver, Duration.ofSeconds(3));
         objLoginPage.inputEmail(this.email);
         objLoginPage.inputPassword(this.password);
         objLoginPage.clickEnter();
 
-        new WebDriverWait(driver, Duration.ofSeconds(5));
         objHeader.openProfile();
         objUserProfile.validateOpeningProfile();
 
-        new WebDriverWait(driver, Duration.ofSeconds(5));
         objUserProfile.clickLogOutButton();
 
-        new WebDriverWait(driver, Duration.ofSeconds(3));
         objLoginPage.validateOpeningLoginPage();
     }
 

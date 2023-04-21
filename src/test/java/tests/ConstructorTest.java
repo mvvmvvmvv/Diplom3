@@ -6,10 +6,7 @@ import org.junit.After;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.*;
-
-import java.time.Duration;
 
 public class ConstructorTest {
     private WebDriver driver;
@@ -23,7 +20,6 @@ public class ConstructorTest {
         driver.get(Constants.HOME_PAGE);
         driver.manage().window().maximize();
 
-        new WebDriverWait(driver, Duration.ofSeconds(3));
         objHomePage.validateBunsSelection();
     }
 
@@ -36,7 +32,6 @@ public class ConstructorTest {
         driver.get(Constants.HOME_PAGE);
         driver.manage().window().maximize();
 
-        new WebDriverWait(driver, Duration.ofSeconds(3));
         objHomePage.clickSauce();
         objHomePage.validateSauceSelection();
     }
@@ -50,7 +45,6 @@ public class ConstructorTest {
         driver.get(Constants.HOME_PAGE);
         driver.manage().window().maximize();
 
-        new WebDriverWait(driver, Duration.ofSeconds(3));
         objHomePage.clickFilling();
         objHomePage.validateFillingSelection();
     }
