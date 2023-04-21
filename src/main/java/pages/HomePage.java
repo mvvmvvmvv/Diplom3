@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import lib.Constants;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -28,37 +29,45 @@ public class HomePage {
         basePage = new BasePage(driver);
     }
 
+    @Step("Click Log in button")
     public void clickLoginButton() {
         basePage.click(loginButtonOnHomePage);
     }
 
+    @Step("Enable Buns tab")
     public void clickBuns() {
         basePage.click(constructorBuns);
     }
 
+    @Step("Enable Sauces tab")
     public void clickSauce() {
         basePage.click(constructorSauce);
     }
 
+    @Step("Enable Fillings tab")
     public void clickFilling() {
         basePage.click(constructorFilling);
     }
 
+    @Step("Validate Buns tab active")
     public void validateBunsSelection() {
         new WebDriverWait(driver, Duration.ofSeconds(3)).until(ExpectedConditions
                 .presenceOfElementLocated(enabledBunsTab));
     }
 
+    @Step("Validate Sauces tab active")
     public void validateSauceSelection() {
         new WebDriverWait(driver, Duration.ofSeconds(3)).until(ExpectedConditions
                 .presenceOfElementLocated(enabledSauceTab));
     }
 
+    @Step("Validate Fillings tab active")
     public void validateFillingSelection() {
         new WebDriverWait(driver, Duration.ofSeconds(3)).until(ExpectedConditions
                 .presenceOfElementLocated(enabledFillingTab));
     }
 
+    @Step("Validate opening home page")
     public void validateOpeningHomePage() {
         String expectedText = "Оформить заказ";
         new WebDriverWait(driver, Duration.ofSeconds(3)).until(ExpectedConditions

@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import lib.Constants;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -21,14 +22,17 @@ public class Header {
         basePage = new BasePage(driver);
     }
 
+    @Step("Open user profile")
     public void openProfile() {
         basePage.click(profileButtonInHeader);
     }
 
+    @Step("Click logo in the header")
     public void clickLogo() {
         basePage.click(logoButtonInHeader);
     }
 
+    @Step("Open constructor from the header")
     public void clickConstructor() {
         basePage.click(constructorButtonInHeader);
     }

@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import lib.Constants;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -25,26 +26,32 @@ public class LoginPage {
         basePage = new BasePage(driver);
     }
 
+    @Step("Enter user email")
     public void inputEmail(String email) {
         basePage.writeText(emailField, email);
     }
 
+    @Step("Enter user password")
     public void inputPassword(String password) {
         basePage.writeText(passwordField, password);
     }
 
+    @Step("Click enter")
     public void clickEnter() {
         basePage.click(enterButton);
     }
 
+    @Step("Open registration page")
     public void openRegisterPage() {
         basePage.click(registerLink);
     }
 
+    @Step("Open password reset form")
     public void clickRestorePasswordLink() {
         basePage.click(restorePasswordLink);
     }
 
+    @Step("Validate opening login page")
     public void validateOpeningLoginPage() {
         String expectedText = "Вход";
         new WebDriverWait(driver, Duration.ofSeconds(3)).until(ExpectedConditions

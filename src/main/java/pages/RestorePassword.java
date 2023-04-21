@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import lib.Constants;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -18,6 +19,7 @@ public class RestorePassword {
         basePage = new BasePage(driver);
     }
 
+    @Step("Follow login page clickable link")
     public void clickLoginLink() {
         basePage.click(loginLink);
     }

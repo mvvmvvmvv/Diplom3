@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import lib.Constants;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -21,8 +22,10 @@ public class UserProfile {
         basePage = new BasePage(driver);
     }
 
+    @Step("Log out")
     public void clickLogOutButton() {basePage.click(logOutButton);}
 
+    @Step("Validate opening user profile")
     public void validateOpeningProfile() {
         String expectedInfoText = "В этом разделе вы можете изменить свои персональные данные";
         new WebDriverWait(driver, Duration.ofSeconds(3)).until(ExpectedConditions
